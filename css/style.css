@@ -3,3 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+#container{
+    width: 80%;
+    margin: 20px auto;
+}
+
+.cross{
+    cursor: pointer;
+    background-color: cyan;
+}
+
+.madeIt{
+    text-decoration: line-through;
+}
