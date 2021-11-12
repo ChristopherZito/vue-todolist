@@ -4,15 +4,47 @@
     box-sizing: border-box;
 }
 #container{
-    width: 80%;
+    width: 85%;
     margin: 20px auto;
+    display: flex;
+    font-size: 20px;
+    background-color: rgb(189, 189, 68);
+    padding: 30px;
+    border-radius: 20px;
 }
 
 .cross{
     cursor: pointer;
-    background-color: cyan;
+    padding: 10px;
+}
+.fa-trash-alt{
+    cursor: pointer;
+    padding: 10px;
 }
 
 .madeIt{
     text-decoration: line-through;
+}
+
+#in-text{
+    height: 50px;
+    width: 300px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 10px;
+    display: block;
+}
+
+#container button{
+    height: 50px;
+    width: 100px;
+    margin-right: 80px;
+    display:inline-block
+}
+
+#container ul {
+    background-color: lightseagreen;
+    padding: 20px;
+    border-radius: 20px;
+    list-style: none;
 }

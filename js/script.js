@@ -18,6 +18,7 @@
 // Gesticso i done dall’interfaccia,
 // quindi il task potrà essere anche segnato come done e non per forza cancellato
 // poi se l’utente vuole potrà anche cancellarlo del tutto.
+//vue.js
 var list = new Vue (
     {
         el:"#container",
@@ -26,16 +27,20 @@ var list = new Vue (
             toMade:"",
             object:[
                 {
-                    text:"Fare la spesa",
+                    text:"Seguire la lezione di mattina",
                     done: true,
                 },
                 {
-                    text:"fare l'esercizio",
+                    text:"Fare l'esercizio",
                     done: true,
                 },
                 {
                     text:"Impazzire per l'esercizio",
                     done: false,
+                },
+                {
+                    text:"Impazzire per lenght invece che length",
+                    done: true,
                 },
                 {
                     text:"Aprire un tiket",
@@ -49,24 +54,28 @@ var list = new Vue (
             objDone(pos){
                 this.object[pos].done = true;
             },
-            //aggiungere un elemento a object
-            addObj(){
-                //creazione nuovo oggetto da inserire nell'array
-                let newObj = {
-                    text: this.object.text = this.newTextObj,
-                    done: this.object.done = false,
-                };
-                // console.log("text: ",this.newTextObj);
-                // console.log(newObj);
-
-                this.object.push(newObj)
-                //reset testo input
-                this.newTextObj = "";
-            },
             //rimozione oggetto
             deleteObj(toDel){
                 this.object.splice(toDel, 1);
-            }
+            },
+            //aggiungere un elemento a object
+            addObj(){
+                //creazione nuovo oggetto da inserire nell'array
+               
+                if(this.newTextObj != "" && this.newTextObj.length > 4){
+                    let newObj = {
+                    text: this.object.text = this.newTextObj,
+                    done: this.object.done = false,
+                    };
+                    // console.log("text: ",this.newTextObj);
+                    // console.log(newObj);
+
+                    this.object.push(newObj)
+                    //reset testo input
+                    this.newTextObj = "";
+                }
+                
+            },
         }
         
     }

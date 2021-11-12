@@ -11,12 +11,15 @@
 <body>
     <div id="container">
         <!-- inserimento item in lista -->
-        <input type="text" placeholder="Inserisci un nuovo compito" v-model="newTextObj" @keyup.enter="addObj" >
+        <input id="in-text" type="text" placeholder="Inserisci un nuovo compito" v-model="newTextObj" @keyup.enter="addObj" >
         <button @click="addObj">
             Add 
         </button>
         <!-- lista -->
-        <ul>
+        <h1 v-if="object.length === 0">
+            Hai finito gli obbiettivi, aggiungine un altro 
+        </h1>
+        <ul v-else>
             <li v-for="element, i in object" :key="i" :class="element.done === true? `madeIt` : `` ">
                 {{element.text}}
                 <span @click="objDone(i)" class="cross">
